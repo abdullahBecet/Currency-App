@@ -60,7 +60,7 @@ def main():
     print()
 
     while True:
-        command = input("Enter a command (q to quit): ").lower():
+        command = input("Enter a command (q to quit): ").lower()
 
         if command == "q":
             break
