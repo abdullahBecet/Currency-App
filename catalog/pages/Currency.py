@@ -1,7 +1,8 @@
 from requests import get
 from pprint import PrettyPrinter
+import django
 BASE_URL= "https://free.currconv.com/"
-API_KEY = "562ddaf40c95f5d58108"
+API_KEY = "8032fe890671e55d01e9"
 
 printer = PrettyPrinter()
 def get_currencies():
@@ -9,7 +10,7 @@ def get_currencies():
     url = BASE_URL + endpoint
     data = get(url).json()['results']
 
-    dala = list(data.items())
+    data = list(data.items())
 
     data.sort()
 
@@ -17,7 +18,7 @@ def get_currencies():
 
 def print_currencies(currencies):
     for name, currency in currencies:
-        name = currency['currenciyName']
+        name = currency['currencyName']
         _id = currency['id']
         symbol = currency.get("currencySymbol","")
         print(f"{_id} - {name} - {symbol}")
@@ -79,5 +80,4 @@ def main():
             print("Unrecognized command!")
 
 main()
-
 
