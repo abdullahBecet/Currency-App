@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<form action="/exchange" method="POST">
+    <label for="from_currency">From Currency:</label>
+    <input type="text" id="from_currency" name="from_currency"><br><br>
+    <label for="to_currency">To Currency:</label>
+    <input type="text" id="to_currency" name="to_currency"><br><br>
+    <input type="submit" value="Submit">
+</form>
+<h1>Exchange Rate from {{ from_currency }} to {{ to_currency }}</h1>
+<p>The exchange rate is {{ name }}</p>
+<div style="border: 1px solid black; padding: 10px;">
+    <ol>
+        {% for item in nam %}
+          <li>{{ item }}</li>
+        {% endfor %}
+    </ol>
+</div>
+{% endblock %}

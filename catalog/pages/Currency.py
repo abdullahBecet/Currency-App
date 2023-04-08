@@ -13,8 +13,13 @@ def get_currencies():
     data = list(data.items())
 
     data.sort()
-
-    return data
+    new = []
+    for name, currency in data:
+        name = currency['currencyName']
+        _id = currency['id']
+        symbol = currency.get("currencySymbol","")
+        new.append(f"{_id} - {name} - {symbol}")
+    return new
 
 def print_currencies(currencies):
     for name, currency in currencies:
@@ -33,7 +38,7 @@ def exchange_rate(currency1, currency2):
         return
     
     rate = list(data.values())[0]
-    print(f"{currency1} -> {currency2} = {rate}")
+    #print(f"{currency1} -> {currency2} = {rate}")
 
     return rate
 
@@ -52,7 +57,7 @@ def convert(currency1, currency2, amount):
     print(f"{amount} {currency1} is equal to {converted_amount} {currency2}")
     return converted_amount
 
-def main():
+#def main():
     currencies = get_currencies()
     print("Welcome to the currency converter!")
     print("List - lists the different currencies")
@@ -79,5 +84,5 @@ def main():
         else:
             print("Unrecognized command!")
 
-main()
+#main()
 

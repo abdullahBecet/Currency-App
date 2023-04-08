@@ -1,5 +1,28 @@
 {% extends 'layout.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>index html</h1>
+    <div class="row">
+        <dic class="col-md12">
+            <div class="card mb-3">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img class="card-img" src="{% static 'img/1.png'%}" alt=""></img>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <div class="card-title">By Abdullah BECET</div>
+                            <p class="card-text">A currency converter application is a program that allows users to convert one currency to another based on current exchange rates. Typically, the user inputs the amount of currency they would like to convert, selects the currency they are converting from and the currency they are converting to, and the application calculates the converted amount using the current exchange rate.</p>
+                            <p class="card-text">
+                            <small class="text-muted">Select Options</small>
+                            </p>
+                            <button onclick="window.location.href='http://127.0.0.1:8000/Currency/'">Currency List</button>
+                            <button onclick="window.location.href='http://127.0.0.1:8000/Currency/detail'">Exchange Rate</button>
+                            <button onclick="window.location.href='http://127.0.0.1:8000/Currency/search'">Convert</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </dic>
+    </div>
 {% endblock %}

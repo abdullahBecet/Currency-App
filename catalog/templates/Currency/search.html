@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+<form action="/exchange" method="POST">
+    <label for="from_currency">From Currency:</label>
+    <input type="text" id="from_currency" name="from_currency"><br><br>
+    <label for="to_currency">To Currency:</label>
+    <input type="text" id="to_currency" name="to_currency"><br><br>
+    <label for="to_currency">Amount:</label>
+    <input type="text" id="to_currency" name="to_currency"><br><br>
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}

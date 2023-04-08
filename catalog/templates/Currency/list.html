@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Currency List</h1>
+    <div style="border: 1px solid black; padding: 10px;">
+        <ol>
+            {% for item in name %}
+              <li>{{ item }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+{% endblock %}
